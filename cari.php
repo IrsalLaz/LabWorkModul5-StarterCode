@@ -14,7 +14,8 @@
 			 <li role="presentation"><a href="lihatdata.php">Lihat Data</a></li>
 			 <li role="presentation" class="active"><a href="cari.php">Cari</a></li>
 			 <li role="presentation"><a href="update.php">Update</a></li>
-		</ul>
+			 <li role="presentation"><a href="cetak.php">Cetak tabel</a></li>
+			</ul>
 		<div id="content">
 			<form class="form-horizontal" method="post">
 				<div class="form-group">
@@ -31,37 +32,35 @@
 			</form>
 
 			<?php
-			//kode php disini
-			if (isset($_POST['cari'])) {
-				$nim=$_POST['nim'];
-				$query="select * from mahasiswa where NIM='$nim'";
-				$hasil=mysqli_query($conn, $query);
-				?>
-					<table class="table">
-						<tr>
-							<td>NIM</td>
-							<td>Nama</td>
-						</tr>
-					</table>
-				<?php
-				if ($hasil=true) {
-					foreach ($hasil as $value) {
-						$nim=$value['NIM'];
-						$nama=$value['Nama_mhs']
-						?>
+				if (isset($_POST['cari'])) {
+					$nim=$_POST['nim'];
+					$query="select * from mahasiswa where NIM='$nim'";
+					$hasil=mysqli_query($conn, $query);
+					?>
+						<table class="table">
 							<tr>
-								<td><?php echo "$nim";?></td>
-								<td><?php echo "$nama";?></td>
+								<td>NIM</td>
+								<td>Nama</td>
 							</tr>
 						<?php
-					}
-				}else {
-					echo"tidak ada data: ";
+						if ($hasil==true) {
+							foreach ($hasil as $value) {
+								$nim=$value['NIM'];
+								$nama=$value['Nama_mhs'];
+								?>
+									<tr>
+										<td><?php echo "$nim";?></td>
+										<td><?php echo "$nama";?></td>
+									</tr>
+								<?php
+							}
+						}else {
+							echo"tidak ada data: ";
+						}
+						?>`
+						</table>
+					<?php
 				}
-				?>
-				</table>
-				<?php
-			}
 			?>
 							
 		</div>

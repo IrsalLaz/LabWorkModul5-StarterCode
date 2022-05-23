@@ -14,6 +14,7 @@
 			 <li role="presentation" class="active"><a href="lihatdata.php">Lihat Data</a></li>
 			 <li role="presentation"><a href="cari.php">Cari</a></li>
 			 <li role="presentation"><a href="update.php">Update</a></li>
+			 <li role="presentation"><a href="cetak.php">Cetak tabel</a></li>
 		</ul>
 		<div id="content">
 			<form class="form-horizontal" method="post">
@@ -53,12 +54,12 @@
 									$nim=$value['NIM'];
 									$nama=$value['Nama_mhs'];
 									?>
-									<tr>
-										<td><?php echo "$i"; ?></td>
-										<td><?php echo "$id_mhs"; ?></td>
-										<td><?php echo "$nim"; ?></td>
-										<td><?php echo "$nama"; ?></td>
-									</tr>
+										<tr>
+											<td><?php echo "$i"; ?></td>
+											<td><?php echo "$id_mhs"; ?></td>
+											<td><?php echo "$nim"; ?></td>
+											<td><?php echo "$nama"; ?></td>
+										</tr>
 									<?php
 									$i++;
 								}

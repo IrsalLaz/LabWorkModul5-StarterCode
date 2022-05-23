@@ -13,6 +13,7 @@
 			 <li role="presentation"><a href="lihatdata.php">Lihat Data</a></li>
 			 <li role="presentation"><a href="cari.php">Cari</a></li>
 			 <li role="presentation"><a href="update.php">Update</a></li>
+			 <li role="presentation"><a href="cetak.php">Cetak tabel</a></li>
 		</ul>
 		<div id="content">
 			<form class="form-horizontal" method="post">
@@ -44,7 +45,7 @@
 					$tambah=mysqli_query($conn, $query);
 					if ($tambah==true) {
 						?>
-							<script type="text/javascript">alert('Data berhasil ditambahkan!');</script>						
+							<script type="text/javascript">alert('Data berhasil ditambahkan!');</script>
 						<?php
 					}else {
 						?>
